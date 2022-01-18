@@ -1,3 +1,8 @@
+function LocalTime()
+  let l:localtime = strftime('%c')
+  echo localtime
+endfunction
+
 function Transaction()
   let l:transaction = getline('.')
   let l:account = matchstr(transaction, '\(\w\+:\?\)\+')
@@ -28,4 +33,5 @@ function AlignTransactionInPlace()
   execute 'normal! 0C' . AlignedTransaction()
 endfunction
 
+nnoremap <Leader>lt :call LocalTime()<CR>
 nnoremap <Leader>at :call AlignTransactionInPlace()<CR>
