@@ -1,7 +1,7 @@
-function CurrentDate()
-  let l:current_date = strftime('%c')
-  let l:year = matchstr(current_date, '20\([2][2-9]\|[3-9][0-9]$\)')
-  let l:month = matchstr(current_date, '\(Jan\|Feb\|Mar\|Apr\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\)')
+function LocalTime()
+  let l:local_time = strftime('%c')
+  let l:year = matchstr(local_time, '20\([2][2-9]\|[3-9][0-9]$\)')
+  let l:month = matchstr(local_time, '\(Jan\|Feb\|Mar\|Apr\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\)')
   if l:month ==# 'Jan'
     let month = '01'
   elseif l:month ==# 'Feb'
@@ -25,8 +25,13 @@ function CurrentDate()
   else
     let month = '12'
   endif
-  let l:day = matchstr(current_date, '\(0[1-9]\|[12][0-9]\|3[0-2]\)')
-  echo year . '-' . month . '-' . day
+  let l:day = matchstr(local_time, '\(0[1-9]\|[12][0-9]\|3[0-2]\)')
+  let l:local_time_strformatted = year . '-' . month . '-' . day
+  return local_time_strformatted
+endfunction
+
+function InsertLocalTime()
+  execute 'normal! 0C' . LocalTime()
 endfunction
 
 function Transaction()
@@ -59,5 +64,5 @@ function AlignTransactionInPlace()
   execute 'normal! 0C' . AlignedTransaction()
 endfunction
 
-nnoremap <Leader>lt :call CurrentDate()<CR>
+nnoremap <Leader>lt :call InsertLocalTime()<CR>
 nnoremap <Leader>at :call AlignTransactionInPlace()<CR>
