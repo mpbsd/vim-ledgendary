@@ -2,25 +2,25 @@ function CurrentDate()
   let l:current_date = strftime('%c')
   let l:year = matchstr(current_date, '20\([2][2-9]\|[3-9][0-9]$\)')
   let l:month = matchstr(current_date, '\(Jan\|Feb\|Mar\|Apr\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\)')
-  if l:month ==# Jan
+  if l:month ==# 'Jan'
     let month = '01'
-  elseif l:month ==# Feb
+  elseif l:month ==# 'Feb'
     let month = '02'
-  elseif l:month ==# Mar
+  elseif l:month ==# 'Mar'
     let month = '03'
-  elseif l:month ==# Apr
+  elseif l:month ==# 'Apr'
     let month = '04'
-  elseif l:month ==# Jun
+  elseif l:month ==# 'Jun'
     let month = '05'
-  elseif l:month ==# Jul
+  elseif l:month ==# 'Jul'
     let month = '06'
-  elseif l:month ==# Aug
+  elseif l:month ==# 'Aug'
     let month = '07'
-  elseif l:month ==# Sep
+  elseif l:month ==# 'Sep'
     let month = '08'
-  elseif l:month ==# Oct
+  elseif l:month ==# 'Oct'
     let month = '09'
-  elseif l:month ==# Nov
+  elseif l:month ==# 'Nov'
     let month = '10'
   else
     let month = '12'
