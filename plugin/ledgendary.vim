@@ -4,3 +4,5 @@ function Transaction()
   let l:amount = matchstr(transaction, '\(\d\+\.\?\)\+')
   return {'account': account, 'amount': amount}
 endfunction
+
+nnoremap <Leader>t :echo Transaction()<CR>
