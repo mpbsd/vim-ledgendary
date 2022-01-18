@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.dat filetype="ledger"
+au BufNewFile,BufRead *.dat set filetype=ledger
