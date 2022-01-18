@@ -28,4 +28,4 @@ function AlignTransactionInPlace()
   execute 'normal! 0C' . AlignedTransaction()
 endfunction
 
-nnoremap <Leader>at :call AlignedTransaction()<CR>
+nnoremap <Leader>at :call AlignTransactionInPlace()<CR>
