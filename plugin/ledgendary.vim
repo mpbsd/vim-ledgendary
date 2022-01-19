@@ -1,4 +1,4 @@
-function LocalTime()
+function LocalDate()
   let l:local_time = strftime('%c')
   let l:year = matchstr(local_time, '20\([2][2-9]\|[3-9][0-9]$\)')
   let l:month = matchstr(local_time, '\(Jan\|Feb\|Mar\|Apr\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\)')
@@ -26,12 +26,12 @@ function LocalTime()
     let month = '12'
   endif
   let l:day = matchstr(local_time, '\(0[1-9]\|[12][0-9]\|3[0-2]\)')
-  let l:local_time_strformatted = year . '-' . month . '-' . day
-  return local_time_strformatted
+  let l:local_date_iso_format = year . '-' . month . '-' . day
+  return local_date_iso_format
 endfunction
 
-function InsertLocalTime()
-  execute 'normal! 0C' . LocalTime()
+function InsertLocalDate()
+  execute 'normal! 0C' . LocalDate()
 endfunction
 
 function Transaction()
@@ -64,5 +64,5 @@ function AlignTransactionInPlace()
   execute 'normal! 0C' . AlignedTransaction()
 endfunction
 
-nnoremap <Leader>lt :call InsertLocalTime()<CR>
+nnoremap <Leader>ld :call InsertLocalTime()<CR>
 nnoremap <Leader>at :call AlignTransactionInPlace()<CR>
