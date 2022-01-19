@@ -64,5 +64,5 @@ function AlignTransactionInPlace()
   execute 'normal! 0C' . AlignedTransaction()
 endfunction
 
-nnoremap <Leader>ld :call InsertLocalTime()<CR>
+nnoremap <Leader>ld :call InsertLocalDate()<CR>
 nnoremap <Leader>at :call AlignTransactionInPlace()<CR>
