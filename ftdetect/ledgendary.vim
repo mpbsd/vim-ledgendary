@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.dat set filetype=ledger
+au BufNewFile,BufRead *.dat setfiletype ledger
