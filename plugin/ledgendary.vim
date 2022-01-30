@@ -37,7 +37,7 @@ endfunction
 function Transaction()
   let l:transaction = getline('.')
   let l:account = matchstr(transaction, '\([A-Za-z0-9_:]\+\)')
-  let l:amount = matchstr(transaction, '\(-\?[0-9]\+\(\.[0-9]\+\)\?\)\+'
+  let l:amount = matchstr(transaction, '\(-\?\d\+\(\.\d\+\)\?\)'
   return {'account': account, 'amount': amount}
 endfunction
 
