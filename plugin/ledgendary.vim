@@ -44,10 +44,12 @@ endfunction
 function AlignedTransaction()
   let l:indent_by = 2
   let l:line_width = 80
+  let l:currency_width = 4
+  let l:currency = 'BRL'
   let l:transaction = Transaction()
   let l:x = strlen(transaction['account'])
   let l:y = strlen(transaction['amount'])
-  let l:z = line_width - (indent_by + x + y + 1)
+  let l:z = line_width - (indent_by + x + y + currency_width + 1) - 1
   let l:aligned_transaction = ''
   for i in range(indent_by)
     let aligned_transaction = aligned_transaction . ' '
@@ -57,6 +59,7 @@ function AlignedTransaction()
     let aligned_transaction = aligned_transaction . ' '
   endfor
   let aligned_transaction = aligned_transaction . transaction['amount']
+  let aligned_transaction = aligned_transaction . ' ' . currency
   return aligned_transaction
 endfunction
 
