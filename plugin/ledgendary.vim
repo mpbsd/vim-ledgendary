@@ -49,7 +49,7 @@ function AlignedTransaction()
   let l:transaction = Transaction()
   let l:x = strlen(transaction['account'])
   let l:y = strlen(transaction['amount'])
-  let l:z = line_width - (indent_by + x + y + currency_width + 1) - 1
+  let l:z = line_width - (indent_by + x + y + currency_width + 1)
   let l:aligned_transaction = ''
   for i in range(indent_by)
     let aligned_transaction = aligned_transaction . ' '
