@@ -1,7 +1,7 @@
 function LocalDate()
   let l:local_time = strftime('%c')
   let l:year = matchstr(local_time, '20\([2][2-9]\|[3-9][0-9]$\)')
-  let l:month = matchstr(local_time, '\(Jan\|Feb\|Mar\|Apr\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\)')
+  let l:month = matchstr(local_time, '\(Jan\|Feb\|Mar\|Apr\|May\|Jun\|Jul\|Aug\|Sep\|Oct\|Nov\|Dec\)')
   if l:month ==# 'Jan'
     let month = '01'
   elseif l:month ==# 'Feb'
@@ -10,20 +10,24 @@ function LocalDate()
     let month = '03'
   elseif l:month ==# 'Apr'
     let month = '04'
-  elseif l:month ==# 'Jun'
+  elseif l:month ==# 'may'
     let month = '05'
-  elseif l:month ==# 'Jul'
+  elseif l:month ==# 'Jun'
     let month = '06'
-  elseif l:month ==# 'Aug'
+  elseif l:month ==# 'Jul'
     let month = '07'
-  elseif l:month ==# 'Sep'
+  elseif l:month ==# 'Aug'
     let month = '08'
-  elseif l:month ==# 'Oct'
+  elseif l:month ==# 'Sep'
     let month = '09'
-  elseif l:month ==# 'Nov'
+  elseif l:month ==# 'Oct'
     let month = '10'
-  else
+  elseif l:month ==# 'Nov'
+    let month = '11'
+  elseif l:month ==# 'Dec'
     let month = '12'
+  else
+    let month = '-1'
   endif
   let l:day = matchstr(local_time, '\(0[1-9]\|[12][0-9]\|3[0-2]\)')
   let l:local_date_iso_format = year . '-' . month . '-' . day
