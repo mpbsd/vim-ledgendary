@@ -67,9 +67,9 @@ function AlignedTransaction()
   return aligned_transaction
 endfunction
 
-function AlignTransactionInPlace()
+function AlignTransaction()
   execute 'normal! 0C' . AlignedTransaction()
 endfunction
 
 nnoremap <Leader>ld :call InsertLocalDate()<CR>
-nnoremap <Leader>at :call AlignTransactionInPlace()<CR>
+nnoremap <Leader>at :call AlignTransaction()<CR>
