@@ -10,7 +10,7 @@ function LocalDate()
     let month = '03'
   elseif l:month ==# 'Apr'
     let month = '04'
-  elseif l:month ==# 'may'
+  elseif l:month ==# 'May'
     let month = '05'
   elseif l:month ==# 'Jun'
     let month = '06'
